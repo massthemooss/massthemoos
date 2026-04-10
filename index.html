@@ -16,7 +16,6 @@
       overflow-x: hidden;
     }
 
-    /* HERO */
     .hero {
       height: 100vh;
       display: flex;
@@ -56,26 +55,6 @@
       background: #ff1e4d;
     }
 
-    /* FLOATING HEARTS */
-    .heart {
-      position: absolute;
-      bottom: -50px;
-      color: pink;
-      font-size: 20px;
-      animation: floatUp 6s linear infinite;
-    }
-
-    @keyframes floatUp {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-110vh); opacity: 0; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* SECTIONS */
     section {
       padding: 80px 20px;
       text-align: center;
@@ -106,7 +85,6 @@
       opacity: 0.9;
     }
 
-    /* GALLERY */
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -127,7 +105,12 @@
       transform: scale(1.05);
     }
 
-    /* LETTER BOX */
+    .label {
+      margin-top: 8px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
     .box {
       background: rgba(255,255,255,0.05);
       padding: 30px;
@@ -136,12 +119,12 @@
       margin: auto;
     }
 
-    /* FOOTER */
     footer {
       padding: 20px;
       text-align: center;
       background: black;
-      opacity: 0.8;
+      opacity: 0.85;
+      font-size: 14px;
     }
 
     @media(max-width: 768px){
@@ -155,7 +138,7 @@
   <!-- HERO -->
   <div class="hero">
     <h1>Happy Anniversary</h1>
-    <h2>To Sophia 💖</h2>
+    <h2>To Sophia Rae Alonsabe 💖</h2>
     <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
       Enter Celebration
     </button>
@@ -174,13 +157,38 @@
   <!-- GALLERY -->
   <section class="gallery">
     <h2>Beautiful Memories</h2>
+    <p>Family • Friends • Travel • Celebrations</p>
+
     <div class="grid">
-      <img src="https://picsum.photos/800/600?random=101" />
-      <img src="https://picsum.photos/800/600?random=102" />
-      <img src="https://picsum.photos/800/600?random=103" />
-      <img src="https://picsum.photos/800/600?random=104" />
-      <img src="https://picsum.photos/800/600?random=105" />
-      <img src="https://picsum.photos/800/600?random=106" />
+      <div>
+        <img src="https://picsum.photos/800/600?random=201" />
+        <div class="label">Family Moments 👨‍👩‍👧‍👦</div>
+      </div>
+
+      <div>
+        <img src="https://picsum.photos/800/600?random=202" />
+        <div class="label">Friends Forever 👯</div>
+      </div>
+
+      <div>
+        <img src="https://picsum.photos/800/600?random=203" />
+        <div class="label">Travel Adventures ✈️</div>
+      </div>
+
+      <div>
+        <img src="https://picsum.photos/800/600?random=204" />
+        <div class="label">Special Celebrations 🎉</div>
+      </div>
+
+      <div>
+        <img src="https://picsum.photos/800/600?random=205" />
+        <div class="label">Happy Memories 💖</div>
+      </div>
+
+      <div>
+        <img src="https://picsum.photos/800/600?random=206" />
+        <div class="label">Beautiful Moments 🌸</div>
+      </div>
     </div>
   </section>
 
@@ -189,12 +197,12 @@
     <h2>💌 Love Letter</h2>
     <div class="box">
       <p>
-        Dear Sophia,<br><br>
+        Dear Sophia Rae Alonsabe,<br><br>
         Happy Anniversary 💖
         You make every moment brighter and every memory unforgettable.
         This website is just a small way to show big appreciation for you.
         May your life be filled with endless joy, love, and success.<br><br>
-        Forever grateful,
+        Forever grateful,<br>
         Someone who cares ❤️
       </p>
     </div>
@@ -202,7 +210,7 @@
 
   <!-- FOOTER -->
   <footer>
-    Made with love 💖 | Anniversary Website
+    Made by Hamdi 💖
   </footer>
 
 </body>
