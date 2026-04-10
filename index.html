@@ -1,98 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nature Live</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4 Image Gallery</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #dfe9f3, #ffffff);
-      text-align: center;
+      background: #f4f4f4;
     }
 
-    header {
-      background: #2e8b57;
-      color: white;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
       padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .container img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     h1 {
-      margin: 0;
-    }
-
-    .intro {
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
-      color: #333;
-    }
-
-    img {
-      width: 90%;
-      max-width: 800px;
-      border-radius: 15px;
-      margin-top: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    button {
-      margin: 20px;
-      padding: 12px 25px;
-      font-size: 16px;
-      background: #2e8b57;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #256f46;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 15px;
-      background: #222;
-      color: white;
+      text-align: center;
+      padding-top: 20px;
     }
   </style>
 </head>
-
 <body>
-
-<header>
-  <h1>🌿 Nature Live Gallery</h1>
-</header>
-
-<div class="intro">
-  <p>
-    Welcome to Nature Live 🌍  
-    This website shows beautiful nature photos from around the world.
-    Discover forests, mountains, oceans, and more — refreshed live!
-  </p>
-</div>
-
-<button onclick="newImage()">🌄 Show New Nature</button>
-
-<br>
-
-<img id="natureImage"
-     src="https://source.unsplash.com/800x500/?nature,forest">
-
-<script>
-function newImage() {
-  document.getElementById("natureImage").src =
-    "https://source.unsplash.com/800x500/?nature,water,mountain&" + new Date().getTime();
-}
-</script>
-
-<footer>
-  <p>© 2026 Nature Live | Explore the beauty of Earth 🌱</p>
-</footer>
-
+  <h1>My 4 Image Gallery</h1>
+  <div class="container">
+    <img src="https://source.unsplash.com/random/800x600?nature1" alt="Image 1" />
+    <img src="https://source.unsplash.com/random/800x600?nature2" alt="Image 2" />
+    <img src="https://source.unsplash.com/random/800x600?nature3" alt="Image 3" />
+    <img src="https://source.unsplash.com/random/800x600?nature4" alt="Image 4" />
+  </div>
 </body>
 </html>
