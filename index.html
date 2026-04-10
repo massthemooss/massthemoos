@@ -3,44 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4 Image Gallery</title>
+  <title>My Simple Website</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      line-height: 1.6;
     }
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      padding: 20px;
-      max-width: 900px;
+    /* Navbar */
+    .navbar {
+      background: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 20px;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero section */
+    .hero {
+      background: url('https://source.unsplash.com/random/1600x900?tech') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff6600;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    /* Sections */
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
-    .container img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    h1 {
+    .card {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
       text-align: center;
-      padding-top: 20px;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .card-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>My 4 Image Gallery</h1>
-  <div class="container">
-    <img src="https://source.unsplash.com/random/800x600?nature1" alt="Image 1" />
-    <img src="https://source.unsplash.com/random/800x600?nature2" alt="Image 2" />
-    <img src="https://source.unsplash.com/random/800x600?nature3" alt="Image 3" />
-    <img src="https://source.unsplash.com/random/800x600?nature4" alt="Image 4" />
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div><strong>MyWebsite</strong></div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
+
+  <!-- Hero -->
+  <div class="hero" id="home">
+    <h1>Welcome to My Website</h1>
+    <p>Simple, clean and responsive design</p>
+    <a href="#about" class="btn">Get Started</a>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      This is a simple example website made with HTML and CSS. It includes a
+      navbar, hero section, cards, and footer.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Web Design</h3>
+        <p>Modern and responsive designs for your business.</p>
+      </div>
+      <div class="card">
+        <h3>Development</h3>
+        <p>High quality coding for websites and apps.</p>
+      </div>
+      <div class="card">
+        <h3>SEO</h3>
+        <p>Improve your website ranking on Google.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: example@email.com</p>
+    <p>Phone: +123 456 789</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 MyWebsite. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
