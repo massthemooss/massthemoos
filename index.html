@@ -7,22 +7,32 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #ffe6f0, #fff5e6);
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
-    /* Confetti effect */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Confetti */
     .confetti {
       position: absolute;
       width: 100%;
       height: 100%;
       overflow: hidden;
       z-index: 0;
+      top: 0;
+      left: 0;
     }
 
     .confetti span {
@@ -42,34 +52,24 @@
       100% { transform: translateY(110vh) rotate(360deg); }
     }
 
-    /* Poster Card */
+    /* Poster */
     .poster {
-      position: relative;
-      z-index: 1;
       background: white;
-      padding: 40px;
+      padding: 30px;
       border-radius: 20px;
-      text-align: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      max-width: 500px;
+      margin-bottom: 30px;
     }
 
     .poster h1 {
-      font-size: 40px;
       color: #d63384;
-      margin-bottom: 10px;
+      font-size: 40px;
+      margin: 0;
     }
 
     .poster h2 {
-      font-size: 22px;
       color: #555;
-      margin-bottom: 20px;
-    }
-
-    .poster p {
-      font-size: 18px;
-      color: #333;
-      line-height: 1.5;
+      margin-top: 10px;
     }
 
     .heart {
@@ -84,7 +84,70 @@
       50% { transform: scale(1.2); }
     }
 
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Button */
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding:
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #d63384;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Confetti -->
+  <div class="confetti">
+    <span style="left:10%; animation-delay:0s;"></span>
+    <span style="left:20%; animation-delay:1s;"></span>
+    <span style="left:30%; animation-delay:2s;"></span>
+    <span style="left:40%; animation-delay:0.5s;"></span>
+    <span style="left:50%; animation-delay:1.5s;"></span>
+    <span style="left:60%; animation-delay:2.5s;"></span>
+    <span style="left:70%; animation-delay:1.2s;"></span>
+    <span style="left:80%; animation-delay:0.7s;"></span>
+    <span style="left:90%; animation-delay:2.2s;"></span>
+  </div>
+
+  <div class="container">
+
+    <!-- Poster -->
+    <div class="poster">
+      <h1>Happy Anniversary</h1>
+      <h2>Sophia Alonsabe</h2>
+      <div class="heart">❤️</div>
+      <p>
+        Wishing you love, happiness, and beautiful memories today and always.
+      </p>
+      <a href="#" class="btn">Celebrate 💖</a>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery">
+      <img src="https://source.unsplash.com/800x600/?anniversary,couple,sunset" alt="Anniversary 1" />
+      <img src="https://source.unsplash.com/800x600/?wedding,rings,love" alt="Anniversary 2" />
+      <img src="https://source.unsplash.com/800x600/?romantic,dinner,candles" alt="Anniversary 3" />
+      <img src="https://source.unsplash.com/800x600/?love,hearts,romantic" alt="Anniversary 4" />
+    </div>
+
+  </div>
+
+</body>
+</html>
