@@ -3,175 +3,207 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Anniversary Sophia Alonsabe</title>
+  <title>Sophia Anniversary Deluxe</title>
+
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ffe6f0, #fff5e6);
+      background: #0f0c29;
+      background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 900px;
-      width: 100%;
-      padding: 20px;
       text-align: center;
       position: relative;
-      z-index: 2;
     }
 
-    /* Confetti background */
-    .confetti {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 1;
-      pointer-events: none;
+    .hero h1 {
+      font-size: 60px;
+      color: #ff4d6d;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    .confetti span {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: red;
-      animation: fall 6s linear infinite;
+    .hero h2 {
+      font-size: 28px;
+      margin-top: 10px;
+      opacity: 0.9;
     }
 
-    .confetti span:nth-child(2n) { background: gold; }
-    .confetti span:nth-child(3n) { background: pink; }
-    .confetti span:nth-child(4n) { background: lightblue; }
-
-    @keyframes fall {
-      0% { transform: translateY(-10vh) rotate(0deg); }
-      100% { transform: translateY(110vh) rotate(360deg); }
-    }
-
-    /* Poster */
-    .poster {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      margin-bottom: 25px;
-    }
-
-    .poster h1 {
-      margin: 0;
-      font-size: 38px;
-      color: #d63384;
-    }
-
-    .poster h2 {
-      margin: 10px 0;
-      color: #444;
-    }
-
-    .heart {
-      font-size: 50px;
-      animation: pulse 1.2s infinite;
-      color: red;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.25); }
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #d63384;
+    .hero button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: #ff4d6d;
       color: white;
-      text-decoration: none;
-      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    /* Gallery */
+    .hero button:hover {
+      transform: scale(1.1);
+      background: #ff1e4d;
+    }
+
+    /* FLOATING HEARTS */
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      color: pink;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .about {
+      background: #141e30;
+    }
+
     .gallery {
+      background: #1c1c3c;
+    }
+
+    .letter {
+      background: #0f172a;
+    }
+
+    h2 {
+      font-size: 40px;
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    /* GALLERY */
+    .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
-      margin-top: 20px;
+      margin-top: 30px;
+      padding: 0 20px;
     }
 
-    .gallery img {
+    .grid img {
       width: 100%;
+      border-radius: 15px;
       height: 220px;
       object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: 0.3s;
     }
 
-    @media (max-width: 700px) {
-      .gallery {
-        grid-template-columns: 1fr;
-      }
+    .grid img:hover {
+      transform: scale(1.05);
     }
 
-    /* Letter */
-    .letter {
-      margin-top: 40px;
+    /* LETTER BOX */
+    .box {
+      background: rgba(255,255,255,0.05);
       padding: 30px;
-      background: white;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: black;
+      opacity: 0.8;
+    }
+
+    @media(max-width: 768px){
+      .grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 40px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Confetti -->
-  <div class="confetti">
-    <span style="left:5%"></span>
-    <span style="left:15%"></span>
-    <span style="left:25%"></span>
-    <span style="left:35%"></span>
-    <span style="left:45%"></span>
-    <span style="left:55%"></span>
-    <span style="left:65%"></span>
-    <span style="left:75%"></span>
-    <span style="left:85%"></span>
-    <span style="left:95%"></span>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Happy Anniversary</h1>
+    <h2>To Sophia 💖</h2>
+    <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+      Enter Celebration
+    </button>
   </div>
 
-  <div class="container">
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2>Our Special Message</h2>
+    <p>
+      Today we celebrate love, memories, laughter, and everything beautiful.
+      Sophia, you are the heart of this special day. May your journey always be filled
+      with happiness, warmth, and endless love.
+    </p>
+  </section>
 
-    <div class="poster">
-      <h1>Happy Anniversary</h1>
-      <h2>Sophia Alonsabe</h2>
-      <div class="heart">❤️</div>
-      <p>Wishing you love, happiness, and beautiful memories together forever.</p>
-      <a class="btn" href="#letter">Celebrate 💖</a>
+  <!-- GALLERY -->
+  <section class="gallery">
+    <h2>Beautiful Memories</h2>
+    <div class="grid">
+      <img src="https://picsum.photos/800/600?random=101" />
+      <img src="https://picsum.photos/800/600?random=102" />
+      <img src="https://picsum.photos/800/600?random=103" />
+      <img src="https://picsum.photos/800/600?random=104" />
+      <img src="https://picsum.photos/800/600?random=105" />
+      <img src="https://picsum.photos/800/600?random=106" />
     </div>
+  </section>
 
-    <!-- 3 WORKING IMAGES ONLY -->
-    <div class="gallery">
-      <img src="https://picsum.photos/800/600?random=11" alt="Anniversary 1" />
-      <img src="https://picsum.photos/800/600?random=22" alt="Anniversary 2" />
-      <img src="https://picsum.photos/800/600?random=33" alt="Anniversary 3" />
-    </div>
-
-    <div id="letter" class="letter">
-      <h2>💌 Congratulatory Letter</h2>
+  <!-- LETTER -->
+  <section class="letter">
+    <h2>💌 Love Letter</h2>
+    <div class="box">
       <p>
-        Dear Sophia Alonsabe,<br><br>
-        Happy Anniversary! 🎉💖<br>
-        May your love continue to grow stronger and bring endless happiness.
-        Wishing you beautiful memories and a lifetime of joy together.<br><br>
-        With love,<br>
-        Your Anniversary Website 💕
+        Dear Sophia,<br><br>
+        Happy Anniversary 💖
+        You make every moment brighter and every memory unforgettable.
+        This website is just a small way to show big appreciation for you.
+        May your life be filled with endless joy, love, and success.<br><br>
+        Forever grateful,
+        Someone who cares ❤️
       </p>
     </div>
+  </section>
 
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    Made with love 💖 | Anniversary Website
+  </footer>
 
 </body>
 </html>
