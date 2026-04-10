@@ -97,8 +97,9 @@
     /* Gallery */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 15px;
+      margin-top: 20px;
     }
 
     .gallery img {
@@ -109,13 +110,13 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .gallery {
         grid-template-columns: 1fr;
       }
     }
 
-    /* Letter page */
+    /* Letter */
     .letter {
       margin-top: 40px;
       padding: 30px;
@@ -151,23 +152,22 @@
       <a class="btn" href="#letter">Celebrate 💖</a>
     </div>
 
+    <!-- 3 WORKING IMAGES ONLY -->
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c8d?auto=format&fit=crop&w=800&q=80" alt="Anniversary 1" />
-      <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80" alt="Anniversary 2" />
-      <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=80" alt="Anniversary 3" />
-      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80" alt="Anniversary 4" />
+      <img src="https://picsum.photos/800/600?random=11" alt="Anniversary 1" />
+      <img src="https://picsum.photos/800/600?random=22" alt="Anniversary 2" />
+      <img src="https://picsum.photos/800/600?random=33" alt="Anniversary 3" />
     </div>
 
     <div id="letter" class="letter">
       <h2>💌 Congratulatory Letter</h2>
       <p>
         Dear Sophia Alonsabe,<br><br>
-        Happy Anniversary! 🎉💖
-        May your love continue to grow stronger with every passing day.
-        Wishing you endless happiness, laughter, and unforgettable memories together.
-        You both deserve all the love in the world. 💕<br><br>
-        With warm wishes,
-        <br>Your Anniversary Website 💖
+        Happy Anniversary! 🎉💖<br>
+        May your love continue to grow stronger and bring endless happiness.
+        Wishing you beautiful memories and a lifetime of joy together.<br><br>
+        With love,<br>
+        Your Anniversary Website 💕
       </p>
     </div>
 
