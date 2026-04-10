@@ -1,39 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Nature Live</title>
+
   <style>
     body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #dfe9f3, #ffffff);
       text-align: center;
-      font-family: Arial;
-      background: #eef;
     }
+
+    header {
+      background: #2e8b57;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .intro {
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+      color: #333;
+    }
+
     img {
-      max-width: 90%;
-      border-radius: 12px;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 15px;
       margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
+
     button {
-      padding: 10px 20px;
+      margin: 20px;
+      padding: 12px 25px;
       font-size: 16px;
-      margin-top: 20px;
+      background: #2e8b57;
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
+    }
+
+    button:hover {
+      background: #256f46;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background: #222;
+      color: white;
     }
   </style>
 </head>
+
 <body>
 
-<h1>🌿 Live Nature Photos</h1>
-<button onclick="newImage()">New Image</button>
+<header>
+  <h1>🌿 Nature Live Gallery</h1>
+</header>
+
+<div class="intro">
+  <p>
+    Welcome to Nature Live 🌍  
+    This website shows beautiful nature photos from around the world.
+    Discover forests, mountains, oceans, and more — refreshed live!
+  </p>
+</div>
+
+<button onclick="newImage()">🌄 Show New Nature</button>
+
 <br>
-<img id="natureImage" src="https://source.unsplash.com/800x500/?nature">
+
+<img id="natureImage"
+     src="https://source.unsplash.com/800x500/?nature,forest">
 
 <script>
 function newImage() {
   document.getElementById("natureImage").src =
-    "https://source.unsplash.com/800x500/?nature&" + new Date().getTime();
+    "https://source.unsplash.com/800x500/?nature,water,mountain&" + new Date().getTime();
 }
 </script>
+
+<footer>
+  <p>© 2026 Nature Live | Explore the beauty of Earth 🌱</p>
+</footer>
 
 </body>
 </html>
