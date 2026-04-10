@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nature Live</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      background: #eef;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌿 Live Nature Photos</h1>
+<button onclick="newImage()">New Image</button>
+<br>
+<img id="natureImage" src="https://source.unsplash.com/800x500/?nature">
+
+<script>
+function newImage() {
+  document.getElementById("natureImage").src =
+    "https://source.unsplash.com/800x500/?nature&" + new Date().getTime();
+}
+</script>
+
+</body>
+</html>
