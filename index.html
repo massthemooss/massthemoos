@@ -10,37 +10,38 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #ffe6f0, #fff5e6);
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
     .container {
-      position: relative;
-      z-index: 1;
       max-width: 900px;
+      width: 100%;
       padding: 20px;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
 
-    /* Confetti */
+    /* Confetti background */
     .confetti {
-      position: absolute;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      z-index: 0;
-      top: 0;
-      left: 0;
+      z-index: 1;
+      pointer-events: none;
     }
 
     .confetti span {
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       background: red;
-      animation: fall 5s linear infinite;
+      animation: fall 6s linear infinite;
     }
 
     .confetti span:nth-child(2n) { background: gold; }
@@ -48,7 +49,7 @@
     .confetti span:nth-child(4n) { background: lightblue; }
 
     @keyframes fall {
-      0% { transform: translateY(-100px) rotate(0deg); }
+      0% { transform: translateY(-10vh) rotate(0deg); }
       100% { transform: translateY(110vh) rotate(360deg); }
     }
 
@@ -57,31 +58,40 @@
       background: white;
       padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      margin-bottom: 25px;
     }
 
     .poster h1 {
-      color: #d63384;
-      font-size: 40px;
       margin: 0;
+      font-size: 38px;
+      color: #d63384;
     }
 
     .poster h2 {
-      color: #555;
-      margin-top: 10px;
+      margin: 10px 0;
+      color: #444;
     }
 
     .heart {
       font-size: 50px;
-      animation: pulse 1s infinite;
+      animation: pulse 1.2s infinite;
       color: red;
-      margin: 10px 0;
     }
 
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+      50% { transform: scale(1.25); }
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #d63384;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
     }
 
     /* Gallery */
@@ -99,15 +109,10 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
-    /* Button */
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #d63384;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -115,36 +120,33 @@
 
   <!-- Confetti -->
   <div class="confetti">
-    <span style="left:10%; animation-delay:0s;"></span>
-    <span style="left:20%; animation-delay:1s;"></span>
-    <span style="left:30%; animation-delay:2s;"></span>
-    <span style="left:40%; animation-delay:0.5s;"></span>
-    <span style="left:50%; animation-delay:1.5s;"></span>
-    <span style="left:60%; animation-delay:2.5s;"></span>
-    <span style="left:70%; animation-delay:1.2s;"></span>
-    <span style="left:80%; animation-delay:0.7s;"></span>
-    <span style="left:90%; animation-delay:2.2s;"></span>
+    <span style="left:5%"></span>
+    <span style="left:15%"></span>
+    <span style="left:25%"></span>
+    <span style="left:35%"></span>
+    <span style="left:45%"></span>
+    <span style="left:55%"></span>
+    <span style="left:65%"></span>
+    <span style="left:75%"></span>
+    <span style="left:85%"></span>
+    <span style="left:95%"></span>
   </div>
 
   <div class="container">
 
-    <!-- Poster -->
     <div class="poster">
       <h1>Happy Anniversary</h1>
       <h2>Sophia Alonsabe</h2>
       <div class="heart">❤️</div>
-      <p>
-        Wishing you love, happiness, and beautiful memories today and always.
-      </p>
-      <a href="#" class="btn">Celebrate 💖</a>
+      <p>Wishing you love, happiness, and beautiful memories together forever.</p>
+      <a class="btn" href="#">Celebrate 💖</a>
     </div>
 
-    <!-- Gallery -->
     <div class="gallery">
-      <img src="https://source.unsplash.com/800x600/?anniversary,couple,sunset" alt="Anniversary 1" />
-      <img src="https://source.unsplash.com/800x600/?wedding,rings,love" alt="Anniversary 2" />
-      <img src="https://source.unsplash.com/800x600/?romantic,dinner,candles" alt="Anniversary 3" />
-      <img src="https://source.unsplash.com/800x600/?love,hearts,romantic" alt="Anniversary 4" />
+      <img src="https://images.unsplash.com/photo-1529634895473-1a7b2c3f0a9c?auto=format&fit=crop&w=800&q=80" alt="Anniversary 1" />
+      <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80" alt="Anniversary 2" />
+      <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=80" alt="Anniversary 3" />
+      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80" alt="Anniversary 4" />
     </div>
 
   </div>
