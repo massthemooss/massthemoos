@@ -6,176 +6,171 @@
 <title>MassTheMooss Restaurant</title>
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial;background:#111;color:white}
 
-body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: white;
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:black;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:15px;
+  z-index:1000;
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  background: url('https://picsum.photos/1600/900?food') center/cover;
+nav a{
+  color:#ffb703;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.page{
+  display:none;
+  padding:100px 20px;
+  text-align:center;
+}
+
+.active{
+  display:block;
+}
+
+.hero{
+  height:100vh;
+  background:url('https://picsum.photos/1600/900?restaurant') center/cover;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  text-align:center;
 }
 
-.hero h1 {
-  font-size:60px;
-  color:#ffb703;
-}
+.hero h1{font-size:60px;color:#ffb703}
 
-.hero p {
-  margin-top:10px;
-  font-size:20px;
-}
-
-.btn {
+.btn{
   margin-top:20px;
   padding:12px 25px;
   background:#ffb703;
   color:black;
-  text-decoration:none;
+  border:none;
   border-radius:25px;
+  cursor:pointer;
 }
 
-section {
-  padding:60px 20px;
-  text-align:center;
-}
-
-h2 {
-  font-size:36px;
-  color:#ffb703;
-  margin-bottom:20px;
-}
-
-/* MENU */
-.menu {
+.grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
+  margin-top:30px;
 }
 
-.card {
+.card{
   background:#1a1a1a;
   padding:15px;
   border-radius:15px;
 }
 
-.card img {
+.card img{
   width:100%;
   height:200px;
   object-fit:cover;
   border-radius:10px;
 }
 
-.card h3 { margin-top:10px; }
-.card p { font-size:14px; opacity:0.8; }
-
-/* SPECIAL */
-.special {
-  background:#222;
+img.big{
+  width:80%;
+  max-width:600px;
+  border-radius:15px;
+  margin-top:20px;
 }
 
-/* FOOTER */
-footer {
+footer{
   background:black;
   padding:20px;
   text-align:center;
 }
 
 @media(max-width:768px){
-  .menu { grid-template-columns:1fr; }
-  .hero h1 { font-size:40px; }
+  .grid{grid-template-columns:1fr}
+  .hero h1{font-size:40px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>MassTheMooss</h1>
-  <p>Premium Dining Experience in Kuala Lumpur</p>
-  <a href="#menu" class="btn">View Menu</a>
+<!-- NAV -->
+<nav>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('menu')">Menu</a>
+  <a onclick="showPage('experience')">Experience</a>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+  <div class="hero">
+    <h1>MassTheMooss</h1>
+    <p>Luxury Dining in Kuala Lumpur</p>
+    <button class="btn" onclick="showPage('menu')">Explore Menu</button>
+  </div>
 </div>
 
-<!-- ABOUT -->
-<section>
-  <h2>About Us</h2>
-  <p>
-    Welcome to MassTheMooss, where flavors meet perfection. Enjoy a unique
-    culinary journey with our chef’s special creations and unforgettable dining experience.
-  </p>
-</section>
-
-<!-- MENU -->
-<section id="menu">
+<!-- MENU PAGE -->
+<div id="menu" class="page">
   <h2>Our Menu</h2>
-
-  <div class="menu">
+  <div class="grid">
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?food=1">
-      <h3>Golden Steak</h3>
-      <p>Grilled premium beef with special herbs.</p>
+      <img src="https://picsum.photos/400/300?food=31">
+      <h3>Luxury Steak</h3>
+      <p>Premium grilled beef with herbs.</p>
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?food=2">
-      <h3>Ocean Delight</h3>
-      <p>Fresh seafood platter with lemon butter sauce.</p>
+      <img src="https://picsum.photos/400/300?food=32">
+      <h3>Seafood Mix</h3>
+      <p>Fresh ocean flavors.</p>
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?food=3">
-      <h3>Royal Pasta</h3>
-      <p>Creamy pasta with rich Italian flavors.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://picsum.photos/400/300?food=4">
-      <h3>Fire Chicken</h3>
-      <p>Spicy grilled chicken with signature sauce.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://picsum.photos/400/300?food=5">
-      <h3>Garden Salad</h3>
-      <p>Fresh vegetables with light dressing.</p>
-    </div>
-
-    <div class="card">
-      <img src="https://picsum.photos/400/300?food=6">
-      <h3>Sweet Paradise</h3>
-      <p>Delicious dessert with chocolate topping.</p>
+      <img src="https://picsum.photos/400/300?food=33">
+      <h3>Italian Pasta</h3>
+      <p>Creamy classic pasta.</p>
     </div>
 
   </div>
-</section>
+</div>
 
-<!-- SPECIAL -->
-<section class="special">
-  <h2>Chef Specials</h2>
-  <p>Experience our exclusive dishes made with passion and creativity.</p>
-</section>
+<!-- EXPERIENCE PAGE -->
+<div id="experience" class="page">
+  <h2>Our Experience</h2>
 
-<!-- CONTACT -->
-<section>
-  <h2>Visit Us</h2>
-  <p>Kuala Lumpur, Malaysia<br>Open Daily: 10AM - 11PM</p>
-</section>
+  <p>Every meal at MassTheMooss is a journey from kitchen to table.</p>
+  <img class="big" src="https://picsum.photos/800/500?restaurant,kitchen">
 
-<!-- FOOTER -->
+  <p>Our servers provide top-level service and hospitality.</p>
+  <img class="big" src="https://picsum.photos/800/500?waiter">
+
+  <p>Enjoy live cooking demonstrations by our expert chefs.</p>
+  <img class="big" src="https://picsum.photos/800/500?chef">
+</div>
+
 <footer>
-  Made by Hamdi | MassTheMooss Restaurant
+  Made by Hamdi | MassTheMooss
 </footer>
+
+<script>
+function showPage(pageId) {
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(page => page.classList.remove('active'));
+
+  document.getElementById(pageId).classList.add('active');
+
+  window.scrollTo(0,0);
+}
+</script>
 
 </body>
 </html>
