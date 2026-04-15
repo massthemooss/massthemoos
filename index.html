@@ -1,217 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sophia Anniversary Deluxe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MassTheMooss Restaurant</title>
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0c29;
-      background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-      color: white;
-      overflow-x: hidden;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+}
 
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('https://picsum.photos/1600/900?food') center/cover;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
 
-    .hero h1 {
-      font-size: 60px;
-      color: #ff4d6d;
-      animation: fadeIn 2s ease-in-out;
-    }
+.hero h1 {
+  font-size:60px;
+  color:#ffb703;
+}
 
-    .hero h2 {
-      font-size: 28px;
-      margin-top: 10px;
-      opacity: 0.9;
-    }
+.hero p {
+  margin-top:10px;
+  font-size:20px;
+}
 
-    .hero button {
-      margin-top: 25px;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      background: #ff4d6d;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.btn {
+  margin-top:20px;
+  padding:12px 25px;
+  background:#ffb703;
+  color:black;
+  text-decoration:none;
+  border-radius:25px;
+}
 
-    .hero button:hover {
-      transform: scale(1.1);
-      background: #ff1e4d;
-    }
+section {
+  padding:60px 20px;
+  text-align:center;
+}
 
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
+h2 {
+  font-size:36px;
+  color:#ffb703;
+  margin-bottom:20px;
+}
 
-    .about {
-      background: #141e30;
-    }
+/* MENU */
+.menu {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
 
-    .gallery {
-      background: #1c1c3c;
-    }
+.card {
+  background:#1a1a1a;
+  padding:15px;
+  border-radius:15px;
+}
 
-    .letter {
-      background: #0f172a;
-    }
+.card img {
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+}
 
-    h2 {
-      font-size: 40px;
-      color: #ff4d6d;
-      margin-bottom: 20px;
-    }
+.card h3 { margin-top:10px; }
+.card p { font-size:14px; opacity:0.8; }
 
-    p {
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-      opacity: 0.9;
-    }
+/* SPECIAL */
+.special {
+  background:#222;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-top: 30px;
-      padding: 0 20px;
-    }
+/* FOOTER */
+footer {
+  background:black;
+  padding:20px;
+  text-align:center;
+}
 
-    .grid img {
-      width: 100%;
-      border-radius: 15px;
-      height: 220px;
-      object-fit: cover;
-      transition: 0.3s;
-    }
-
-    .grid img:hover {
-      transform: scale(1.05);
-    }
-
-    .label {
-      margin-top: 8px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    .box {
-      background: rgba(255,255,255,0.05);
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    footer {
-      padding: 20px;
-      text-align: center;
-      background: black;
-      opacity: 0.85;
-      font-size: 14px;
-    }
-
-    @media(max-width: 768px){
-      .grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 40px; }
-    }
-  </style>
+@media(max-width:768px){
+  .menu { grid-template-columns:1fr; }
+  .hero h1 { font-size:40px; }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Happy Anniversary</h1>
-    <h2>To Sophia Rae Alonsabe 💖</h2>
-    <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-      Enter Celebration
-    </button>
+<!-- HERO -->
+<div class="hero">
+  <h1>MassTheMooss</h1>
+  <p>Premium Dining Experience in Kuala Lumpur</p>
+  <a href="#menu" class="btn">View Menu</a>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <h2>About Us</h2>
+  <p>
+    Welcome to MassTheMooss, where flavors meet perfection. Enjoy a unique
+    culinary journey with our chef’s special creations and unforgettable dining experience.
+  </p>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <h2>Our Menu</h2>
+
+  <div class="menu">
+
+    <div class="card">
+      <img src="https://picsum.photos/400/300?food=1">
+      <h3>Golden Steak</h3>
+      <p>Grilled premium beef with special herbs.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/400/300?food=2">
+      <h3>Ocean Delight</h3>
+      <p>Fresh seafood platter with lemon butter sauce.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/400/300?food=3">
+      <h3>Royal Pasta</h3>
+      <p>Creamy pasta with rich Italian flavors.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/400/300?food=4">
+      <h3>Fire Chicken</h3>
+      <p>Spicy grilled chicken with signature sauce.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/400/300?food=5">
+      <h3>Garden Salad</h3>
+      <p>Fresh vegetables with light dressing.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://picsum.photos/400/300?food=6">
+      <h3>Sweet Paradise</h3>
+      <p>Delicious dessert with chocolate topping.</p>
+    </div>
+
   </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <h2>Our Special Message</h2>
-    <p>
-      Today we celebrate love, memories, laughter, and everything beautiful.
-      Sophia, you are the heart of this special day. May your journey always be filled
-      with happiness, warmth, and endless love.
-    </p>
-  </section>
+<!-- SPECIAL -->
+<section class="special">
+  <h2>Chef Specials</h2>
+  <p>Experience our exclusive dishes made with passion and creativity.</p>
+</section>
 
-  <!-- GALLERY -->
-  <section class="gallery">
-    <h2>Beautiful Memories</h2>
-    <p>Family • Friends • Travel • Celebrations</p>
+<!-- CONTACT -->
+<section>
+  <h2>Visit Us</h2>
+  <p>Kuala Lumpur, Malaysia<br>Open Daily: 10AM - 11PM</p>
+</section>
 
-    <div class="grid">
-      <div>
-        <img src="https://picsum.photos/800/600?random=201" />
-        <div class="label">Family Moments 👨‍👩‍👧‍👦</div>
-      </div>
-
-      <div>
-        <img src="https://picsum.photos/800/600?random=202" />
-        <div class="label">Friends Forever 👯</div>
-      </div>
-
-      <div>
-        <img src="https://picsum.photos/800/600?random=203" />
-        <div class="label">Travel Adventures ✈️</div>
-      </div>
-
-      <div>
-        <img src="https://picsum.photos/800/600?random=204" />
-        <div class="label">Special Celebrations 🎉</div>
-      </div>
-
-      <div>
-        <img src="https://picsum.photos/800/600?random=205" />
-        <div class="label">Happy Memories 💖</div>
-      </div>
-
-      <div>
-        <img src="https://picsum.photos/800/600?random=206" />
-        <div class="label">Beautiful Moments 🌸</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LETTER -->
-  <section class="letter">
-    <h2>💌 Love Letter</h2>
-    <div class="box">
-      <p>
-        Dear Sophia Rae Alonsabe,<br><br>
-        Happy Anniversary 💖
-        You make every moment brighter and every memory unforgettable.
-        This website is just a small way to show big appreciation for you.
-        May your life be filled with endless joy, love, and success.<br><br>
-        Forever grateful,<br>
-        Someone who cares ❤️
-      </p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    Made by Hamdi
-  </footer>
+<!-- FOOTER -->
+<footer>
+  Made by Hamdi | MassTheMooss Restaurant
+</footer>
 
 </body>
 </html>
