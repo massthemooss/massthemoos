@@ -3,89 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nurse Services - Achref Ben Ghozlen</title>
+<title>Achref Ben Ghozlen | Professional Nurse</title>
 
 <style>
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f4f8fb;
-    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
+    color: #333;
 }
 
-header {
-    background-color: #2c7be5;
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(44,123,229,0.8), rgba(44,123,229,0.8)),
+    url('https://images.unsplash.com/photo-1584515933487-779824d29309');
+    background-size: cover;
     color: white;
-    padding: 30px;
+    padding: 100px 20px;
 }
 
-.container {
-    padding: 20px;
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
-h1 {
-    margin: 0;
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: auto;
 }
 
-.info {
-    font-size: 18px;
-    margin: 10px 0;
+/* SECTION */
+.section {
+    padding: 50px 20px;
 }
 
+.title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2c7be5;
+}
+
+/* CARD */
+.card {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* GALLERY */
 .gallery {
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .gallery img {
     width: 220px;
     height: 150px;
     margin: 10px;
-    border-radius: 10px;
+    border-radius: 12px;
     object-fit: cover;
+    transition: transform 0.3s;
 }
 
-.contact {
-    margin-top: 25px;
-    font-size: 20px;
-    color: green;
-    font-weight: bold;
+.gallery img:hover {
+    transform: scale(1.08);
 }
 
-.footer {
-    margin-top: 40px;
-    padding: 15px;
-    background: #ddd;
+/* BUTTON */
+.btn {
+    background: #2c7be5;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #1a5fd0;
+}
+
+/* FOOTER */
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
 }
 </style>
 
 </head>
+
 <body>
 
-<header>
-    <h1>Professional Nurse Services</h1>
-</header>
+<!-- HERO -->
+<div class="hero">
+    <h1>Achref Ben Ghozlen</h1>
+    <p>Professional Nurse in Sfax, Tunisia providing compassionate, reliable, and high-quality healthcare services at your home.</p>
+</div>
 
-<div class="container">
+<!-- ABOUT -->
+<div class="section">
+    <div class="card">
+        <div class="title">About Me</div>
+        <p>
+            I am a dedicated and experienced nurse based in Sfax, Tunisia. 
+            I provide personalized patient care, home nursing services, and medical assistance 
+            with professionalism, empathy, and attention to detail.
+        </p>
+    </div>
+</div>
 
-    <div class="info"><strong>Name:</strong> Achref Ben Ghozlen</div>
-    <div class="info"><strong>Location:</strong> Sfax, Tunisia</div>
+<!-- SERVICES -->
+<div class="section">
+    <div class="card">
+        <div class="title">Services</div>
+        <ul>
+            <li>Home patient care</li>
+            <li>Injection & medication assistance</li>
+            <li>Post-surgery care</li>
+            <li>Elderly care and monitoring</li>
+        </ul>
+    </div>
+</div>
 
+<!-- GALLERY -->
+<div class="section">
+    <div class="title">Gallery</div>
     <div class="gallery">
         <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
         <img src="https://images.unsplash.com/photo-1580281658629-9b0aef5c5c4b">
         <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde">
         <img src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957">
     </div>
+</div>
 
-    <div class="contact">
-        📞 +216 50 197 210
+<!-- CONTACT -->
+<div class="section">
+    <div class="card">
+        <div class="title">Contact</div>
+        <p>Phone: +216 50 197 210</p>
+
+        <a class="btn" href="https://wa.me/21650197210" target="_blank">
+            Contact on WhatsApp
+        </a>
     </div>
-
 </div>
 
-<div class="footer">
-    © 2026 Nurse Services - All Rights Reserved
-</div>
+<footer>
+    © 2026 Achref Ben Ghozlen - Professional Nurse
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+// simple animation on scroll
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
+            card.style.opacity = 1;
+            card.style.transform = "translateY(0)";
+        }
+    });
+});
+
+// initial hidden style
+cards.forEach(card => {
+    card.style.opacity = 0;
+    card.style.transform = "translateY(40px)";
+    card.style.transition = "all 0.6s ease";
+});
+</script>
 
 </body>
 </html>
